@@ -1,0 +1,16 @@
+- name: Inicio
+  link: /
+#- name: About
+#  link: /about
+#- name: Research
+#  link: /research
+#- name: Teaching
+#  link: /teaching
+#- name: Student projects/theses
+#  link: /thesis-proposals
+#- name: CV/Portfolio
+#  link: /cv
+- name: Blog
+  link: /blog
+#- name: Contacts
+#  link: /references

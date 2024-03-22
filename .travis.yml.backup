@@ -1,0 +1,29 @@
+language: ruby
+rvm:
+- 2.5
+env:
+  global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+  - secure: "npAAm7JikAK7UtLnOpB9l/TtwYj+KQzD0AuF6mIBfdcnbJzHkyCI8BzQdkyXZNKtOtZ/4THoCBoTOjnrMe7FLRDOOHQa/1ZaYTln9EXdjkwAhaIcalaX1GkQ9NeogBVsN0CKaTZQedwSaEQbkmHMVmnUsO0/UPdzfW6+uoeRcrY+Yf6zVxp/W4/0taHSbGELcalrQ0XoXcuFthp3BlQvzPQRluQnqV1J+ltQgBH7VR/khxdWbIlZq8+uCANshtGWpod6+TGuiJYFUdsMHpy8bnLOXZjHCELDW+3fvGqKULOhsmpaYcHcKiI66O91jS4D2XBX3G/wusk+TlKoPzWWxdejH3N3FFDA0BWt5R/DLfDsH/UGhlNZpODeGAYwpoGob+pXXf8ozbzepjAB/hmFIF/KBMk1/DphEUVLpH5UPheN6/DXY1BYFADiPatcGYAO/BTLN0UnVl1ljC03hp4KBEeHEKHCvcFbyP+BdfbN4wEwjrWVZlr+b/LGzybdNxaD2n/wwpYl1YPTvkicJWH1NUA4gtq84z2OM2EzTKMyXG6uSEF2uhgxNtjhbl3R87EYON76fSfvJZkqa7j06/pNx/S/Id9bekERc5rDewBfRX30lF8HwUneB3KNrBXvHdLkCXVOiOc2VW9Dh6zCfVbvStrzZ9FmJsM7LBVpYTBNSCg="
+#cache: bundler
+before_install:
+- chmod +x ./cibuild
+#- openssl aes-256-cbc -K $encrypted_5997fd602279_key -iv $encrypted_5997fd602279_iv
+#  -in mygithub.enc -out mygithub -d
+#- chmod 600 mygithub
+#- eval $(ssh-agent -s)
+#- ssh-add mygithub
+- gem install bundler:1.17.1
+branches:
+  only:
+  - release
+script: "./cibuild"
+deploy:
+  provider: pages
+  local-dir: "./_site"
+  target-branch: master
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: release
