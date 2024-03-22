@@ -1,8 +1,0 @@
-<nav>
-  <ul class="menu">
-  {% for item in site.data.nav %}
-    {% assign itemUrl = item.link | append: '/' %}
-    <li><a href="{{ item.link }}" {%if page.url == itemUrl or page.url == item.link %}class="selected_link"{% endif %}>{{item.name}}</a></li>
-  {% endfor %}
-  </ul>
-</nav>
