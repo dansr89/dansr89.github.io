@@ -1,0 +1,11 @@
+---
+# Only the main SASS file needs front matter
+# https://stackoverflow.com/questions/38437416/jekyll-doesnt-compile-scss-files-with-jekyll-serve
+---
+
+// @import "bootstrap/bootstrap";
+@import "utils";
+
+sidebar-about h1 {
+  font-size: 110%;
+}
