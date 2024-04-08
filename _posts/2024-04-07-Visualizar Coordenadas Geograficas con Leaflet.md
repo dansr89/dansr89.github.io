@@ -78,7 +78,7 @@ for (i = 0; i < coordinates.length; i++) {
 ![](https://github.com/dansr89/dansr89.github.io/blob/main/p1img/map2.png?raw=true)
 
 
-Necesitaba generar popups en cada marcador que contengan una imagen y descripcion de la misma, para esto es el campo que en el arreglo llene con las cadenas "EjemploX" , la idea es generar un campo extra en el arreglo, con las URLs de las imagenes.
+Necesitaba generar popups en cada marcador y que contengan una imagen con descripcion de la misma, para esto es el campo que en el arreglo llene con las cadenas "EjemploX" , la idea es generar un campo extra en el arreglo, con las URLs de las imagenes.
 
 ```bash
 // Pinta popups con imagenes y Texto
